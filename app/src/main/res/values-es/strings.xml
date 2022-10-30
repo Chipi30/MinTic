@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Sweet Home</string>
+    <string name="hintUser">ejemplo@email.com</string>
+    <string name="register">Registrate</string>
+    <string name="welcomeText">Bienvenido</string>
+    <string name="regIntro">Bienvenido al portal de Sweet Home, por favor complete los campos a continuación para proceder con su registro:</string>
+    <string name="name">Nombre</string>
+    <string name="lastName">Apellido</string>
+    <string name="NIT">NIT</string>
+    <string name="email">Correo electrónico</string>
+    <string name="regPhone">Telefono</string>
+    <string name="regOutro">Utiliza ocho caracteres como mínimo con una combinación de letras, números y símbolos</string>
+    <string name="regPassword">Contraseña</string>
+    <string name="regPrivacy">He leido y acepto los terminos y politicas de privacidad</string>
+    <string name="text1">Acompañamiento, asesoría y apoyo económico para el fortalecimiento familiar.</string>
+    <string name="who_are_we">Quienes somos?</string>
+    <string name="who_are_we_text">El Sweet Home es una modalidad de restablecimiento de derechos que consiste en elacompañamiento, la asesoría y el apoyo económico para el fortalecimiento familiar, esta medida aplica para familias que tienen las condiciones para el cuidado, afecto y atención de los niños, niñas menores de 18 años con discapacidad.</string>
+    <string name="What_do_we_do">Que hacemos?</string>
+    <string name="What_do_we_do_text">Esta modalidad de atención ofrece a las familias beneficiarias herramientas para el mejoramiento en la atención de sus hijos e hijas con discapacidad, en sus condiciones habitacionales, al igual que potencializa su capacidad de gestión para la utilización de las redes de servicios institucionales, sociales y comunitarios, que facilitan el ejercicio de sus derechos.</string>
+    <string name="fab_text">Elemento añadido</string>
+    <string name="agendar_citaP">Agendar cita con psicologia</string>
+    <string name="agendar_citaM">Agendar cita medicina general</string>
+    <string name="acompañamiento">Proxima visita</string>
+    <string name="tarea">Tarea</string>
+    <string name="hora">Hora</string>
+    <string name="lugar">Lugar</string>
+    <string name="home">Inicio</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+</resources>
