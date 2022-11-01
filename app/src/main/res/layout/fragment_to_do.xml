@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:background="@drawable/fondo4"
-    tools:context="ToDoFragment">
+    tools:context=".ToDoFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleToDoList"

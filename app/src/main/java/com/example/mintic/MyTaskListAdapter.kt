@@ -14,7 +14,7 @@ class MyTaskListAdapter (context : AppCompatActivity, val info :Bundle)
 {
         class MyViewHolder(val layout : View) :RecyclerView.ViewHolder(layout)
     private var context : AppCompatActivity = context
-    var myTaskTitle : ArrayList<String> = info.getStringArrayList("title") as ArrayList<String>
+    var myTaskTitles : ArrayList<String> = info.getStringArrayList("titles") as ArrayList<String>
     var myTaskTimes : ArrayList<String> = info.getStringArrayList("times") as ArrayList<String>
     var myTaskPlaces : ArrayList<String> = info.getStringArrayList("places") as ArrayList<String>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -25,7 +25,7 @@ class MyTaskListAdapter (context : AppCompatActivity, val info :Bundle)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var textViewTask =holder.layout.findViewById<TextView>(R.id.textViewTask)
         var textViewTime =holder.layout.findViewById<TextView>(R.id.textViewTime)
-        textViewTask.text=myTaskTitle[position]
+        textViewTask.text=myTaskTitles[position]
         textViewTime.text=myTaskTimes[position]
         holder.layout.setOnClickListener {
             Toast.makeText(holder.itemView.context,textViewTask.text,Toast.LENGTH_LONG).show()
@@ -35,7 +35,14 @@ class MyTaskListAdapter (context : AppCompatActivity, val info :Bundle)
             datos.putString("lugar",myTaskPlaces[position])
             context.getSupportFragmentManager()?.beginTransaction()
                 ?.setReorderingAllowed(true)
+                ?.replace(R.id.fcvToDo,DetailFragment::class.java,datos,"detail")
+                ?.addToBackStack("")
+                ?.commit()
         }
+    }
+
+    override fun getItemCount(): Int {
+        return myTaskTitles.size
     }
 
 }

@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/listPreferredItemHeightLarge"
     android:gravity="center"
     android:orientation="horizontal"
-    android:background="?attr/listPreferredItemHeightLarge">
+    android:background="?attr/selectableItemBackground">
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_assignment_black_24dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1">
 
+    </ImageView>
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_weight="4"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_weight="4"
         android:layout_gravity="center_vertical">
-
-        <TextureView
+        <TextView
             android:id="@+id/textViewTask"
             android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:text="Task title"
-            android:textColor="@color/cyan"
+            android:layout_height="wrap_content"
+            android:text="task title"
+            android:textColor="@color/teal_200"
             android:textSize="20sp"
-            android:textStyle="bold" />
-        <TextureView
+            android:textStyle="bold">
+
+        </TextView>
+        <TextView
             android:id="@+id/textViewTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Time"
-            android:textSize="20sp"
+            android:text="hora"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
     </LinearLayout>
-
-
-
 
 </LinearLayout>
