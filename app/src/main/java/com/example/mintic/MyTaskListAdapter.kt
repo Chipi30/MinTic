@@ -33,6 +33,7 @@ class MyTaskListAdapter (context : AppCompatActivity, val info :Bundle)
             datos.putString("tarea",textViewTask.text as String)
             datos.putString("hora",textViewTime.text as String)
             datos.putString("lugar",myTaskPlaces[position])
+            context.supportFragmentManager
         }
     }
 
