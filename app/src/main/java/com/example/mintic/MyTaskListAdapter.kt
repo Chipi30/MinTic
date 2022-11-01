@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
@@ -21,8 +23,17 @@ class MyTaskListAdapter (context : AppCompatActivity, val info :Bundle)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        var textViewTask =holder
-
+        var textViewTask =holder.layout.findViewById<TextView>(R.id.textViewTask)
+        var textViewTime =holder.layout.findViewById<TextView>(R.id.textViewTime)
+        textViewTask.text=myTaskTitle[position]
+        textViewTime.text=myTaskTimes[position]
+        holder.layout.setOnClickListener {
+            Toast.makeText(holder.itemView.context,textViewTask.text,Toast.LENGTH_LONG).show()
+            val datos =Bundle()
+            datos.putString("tarea",textViewTask.text as String)
+            datos.putString("hora",textViewTime.text as String)
+            datos.putString("lugar",myTaskPlaces[position])
+        }
     }
 
 }
