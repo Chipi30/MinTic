@@ -48,12 +48,6 @@
                 android:text="@string/user"
                 android:textColor="@color/cyan" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-            </LinearLayout>
-
             <com.google.android.material.textfield.TextInputLayout
 
 
@@ -116,14 +110,40 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="1dp">
+
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/google"
+                android:gravity="center"
+                android:textColor="@color/cyan_dark"/>
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/facebook"
+                android:gravity="center"
+                android:textColor="@color/cyan_dark"/>
+            <Button
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/correo"
+                android:gravity="center"
+                android:textColor="@color/cyan_dark"/>
+        </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="20dp"
+            android:gravity="center"
             android:hint="@string/text1"
             android:textSize="12sp"
-            android:gravity="center"
             android:textStyle="bold" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
