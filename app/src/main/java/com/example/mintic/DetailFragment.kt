@@ -1,4 +1,4 @@
-package com.example.sweethome
+package com.example.mintic
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.mintic.R
 
-class DetailFragment : Fragment() {
-
+class DetailFragment : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -19,20 +17,17 @@ class DetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val fragmento = inflater.inflate(R.layout.fragment_detail,container,false)
-
-        var tarea = requireArguments().getString("Tarea")
-        var hora = requireArguments().getString("Hora")
-        var lugar = requireArguments().getString("Lugar")
-
-        var textViewTarea: TextView = fragmento.findViewById(R.id.textViewTarea)
-        var textViewHora: TextView = fragmento.findViewById(R.id.textViewHora)
-        var textViewLugar: TextView = fragmento.findViewById(R.id.textViewLugar)
-
-        textViewTarea.text = tarea
-        textViewHora.text = hora
-        textViewLugar.text = lugar
-
+        val fragmento=inflater.inflate(R.layout.fragment_detail,container,false)
+        var tarea=requireArguments().getString("Tarea")
+        var hora=requireArguments().getString("Hora")
+        var lugar=requireArguments().getString("Lugar")
+        var tvTarea:TextView=fragmento.findViewById(R.id.tvTarea)
+        var tvHora:TextView=fragmento.findViewById(R.id.tvHora)
+        var tvLugar:TextView=fragmento.findViewById(R.id.tvLugar)
+        tvTarea.text=tarea
+        tvHora.text=hora
+        tvLugar.text=lugar
         return fragmento
     }
+
 }

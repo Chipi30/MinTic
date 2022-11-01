@@ -67,6 +67,7 @@ class RegisterActivity : AppCompatActivity() {
     fun onRegistro(view: View) {
         if(ValidarForm()){
             Toast.makeText(this,"Registro correcto", Toast.LENGTH_LONG).show()
+            //para redirigir al welcome
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
         } else{

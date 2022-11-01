@@ -1,6 +1,7 @@
 package com.example.sweethome
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.mintic.R
 import com.google.android.material.textfield.TextInputEditText
 import java.util.regex.Pattern
@@ -56,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Usuario Correcto", Toast.LENGTH_LONG).show()
 
         } else{
-            Toast.makeText(this,"Usuario o contraseña no registrado", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,getString(R.string.usernoregistrado), Toast.LENGTH_LONG).show()
         }
 
 
@@ -69,12 +71,43 @@ class MainActivity : AppCompatActivity() {
 
         if (editUsername!!.text.toString() == "sweet@home.com") {
             if (editPassword!!.text.toString() == "Sweet22+") {
-                val intent = Intent(this, WelcomeActivity::class.java)
-                startActivity(intent)
+                val negative={_:DialogInterface,_:Int->}
+                val positivoBtn={dialog:DialogInterface,which:Int->
+
+                    val intent = Intent(this, WelcomeActivity::class.java)
+                    startActivity(intent)
+
+                }
+
+
+                val dialog=AlertDialog.Builder(this)
+                    .setTitle(getString(R.string.text_welcome))
+                    .setMessage("User: " +editUsername!!.text.toString())
+                    .setPositiveButton("OK",positivoBtn)
+                    .setNegativeButton("Cancelar",negative)
+                    .create()
+                    .show()
+
+            }else{
+                val dialog=AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage(getString(R.string.errorpassword))
+                    .create()
+                    .show()
+                validar = false
             }
         }else {
+
+            val dialog=AlertDialog.Builder(this)
+                .setTitle("Error")
+                .setMessage(getString(R.string.erroruser))
+                .create()
+                .show()
+            //Toast.makeText(this, getString(R.string.erroruser), Toast.LENGTH_SHORT).show()
             validar = false
         }
+
+
 
         if (TextUtils.isEmpty(editUsername!!.text.toString())) {
             editUsername!!.error = "Campo requerido"

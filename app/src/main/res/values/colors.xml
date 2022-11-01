@@ -11,5 +11,6 @@
     <color name="cyan">#006064</color>
     <color name="cyan_ligth">#428e92</color>
     <color name="cyan_dark">#00363a</color>
+    <color name="grey_500">#9E9E9E</color>
 
 </resources>

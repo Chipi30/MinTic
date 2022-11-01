@@ -4,6 +4,7 @@
     <string name="register">Register</string>
     <string name="user">User</string>
     <string name="password">Password</string>
+    <string name="btloginidiom">Login</string>
     <string name="welcomeText">Welcome</string>
     <string name="regIntro">Welcome to the Sweet Home portal, please complete the fields below to proceed with your registration:</string>
     <string name="name">Name</string>
@@ -27,4 +28,10 @@
     <string name="hora">Hour</string>
     <string name="lugar">Place</string>
     <string name="home">Home</string>
+    <string name="errorpassword">Invalite Password</string>
+    <string name="erroruser">Invalite Username</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="usernoregistrado">That username or password did not work.</string>
+    <string name="registerwithgoogle">Register Google</string>
+    <string name="registerfacebook">Register Facebook</string>
 </resources>

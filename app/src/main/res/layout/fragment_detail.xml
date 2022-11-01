@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,30 +9,34 @@
     android:gravity="center"
     tools:context=".DetailFragment">
 
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="284dp"
         android:src="@drawable/visita" />
     <TextView
-        android:id="@+id/textViewTarea"
+        android:id="@+id/tvTarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="@string/tarea"/>
+        android:text="@string/tarea"
+        android:textColor="@color/black"/>
     <TextView
-        android:id="@+id/textViewHora"
+        android:id="@+id/tvHora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="@string/hora"/>
+        android:text="@string/hora"
+        android:textColor="@color/black"/>
     <TextView
-        android:id="@+id/textViewLugar"
+        android:id="@+id/tvLugar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="@string/lugar"/>
+        android:text="@string/lugar"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

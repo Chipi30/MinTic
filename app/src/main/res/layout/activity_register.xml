@@ -7,12 +7,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo4"
-    tools:context=".RegisterActivity">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <TextView
@@ -113,7 +113,8 @@
             android:justificationMode="inter_word"
             android:paddingVertical="10dp"
             android:text="@string/regOutro"
-            android:textColor="#aeaeae" />
+            android:textColor="#aeaeae"
+            android:textSize="11sp"/>
         <CheckBox
             android:id="@+id/checkpolicies"
             android:layout_width="wrap_content"
@@ -125,11 +126,10 @@
 
     </LinearLayout>
 
-
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/cyan_ligth"
         android:hint="@string/register"
@@ -137,6 +137,56 @@
         android:paddingLeft="15dip"
         android:paddingRight="15dip"
         android:textColor="@color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="3dp"
+            android:src="@drawable/google">
+
+        </ImageView>
+        <Button
+            android:id="@+id/btnRegister1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/cyan_ligth"
+            android:hint="@string/registerwithgoogle"
+            android:onClick="onRegistro"
+
+            android:textColor="@color/black" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="3dp"
+            android:src="@drawable/facebook">
+
+        </ImageView>
+        <Button
+            android:id="@+id/btnRegister2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/cyan_ligth"
+            android:hint="@string/registerfacebook"
+            android:onClick="onRegistro"
+            android:layout_margin="2dp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/link_to_login"

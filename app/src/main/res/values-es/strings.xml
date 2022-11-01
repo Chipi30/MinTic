@@ -11,6 +11,7 @@
     <string name="regPhone">Telefono</string>
     <string name="regOutro">Utiliza ocho caracteres como mínimo con una combinación de letras, números y símbolos</string>
     <string name="regPassword">Contraseña</string>
+    <string name="btloginidiom">Acceder</string>
     <string name="regPrivacy">He leido y acepto los terminos y politicas de privacidad</string>
     <string name="text1">Acompañamiento, asesoría y apoyo económico para el fortalecimiento familiar.</string>
     <string name="who_are_we">Quienes somos?</string>
@@ -27,4 +28,10 @@
     <string name="home">Inicio</string>
     <string name="user">Usuario</string>
     <string name="password">Contraseña</string>
+    <string name="errorpassword">Contraseña Incorrecta</string>
+    <string name="erroruser">Usuario Incorrecto</string>
+    <string name="text_welcome">Bienvenido</string>
+    <string name="usernoregistrado">Usuario o contraseña no registrada.</string>
+    <string name="registerwithgoogle">Iniciar con Google</string>
+    <string name="registerfacebook">Iniciar con Facebook</string>
 </resources>
