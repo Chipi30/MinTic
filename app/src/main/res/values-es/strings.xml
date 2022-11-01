@@ -34,4 +34,6 @@
     <string name="usernoregistrado">Usuario o contraseña no registrada.</string>
     <string name="registerwithgoogle">Iniciar con Google</string>
     <string name="registerfacebook">Iniciar con Facebook</string>
+    <string name="olvidoContraseña">¿Olvido su contraseña?</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta? Accede</string>
 </resources>

@@ -34,4 +34,6 @@
     <string name="usernoregistrado">That username or password did not work.</string>
     <string name="registerwithgoogle">Register Google</string>
     <string name="registerfacebook">Register Facebook</string>
+    <string name="olvidoContraseña">Forgot my password?</string>
+    <string name="ya_tienes_cuenta">Already have an account? Access</string>
 </resources>
