@@ -7,15 +7,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:background="@drawable/fondo4"
-    tools:context=".ToDoFragment">
+    tools:context=".ToDoFragment"
+    android:background="@drawable/fondo4">
+<!--    -->
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleToDoList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
    <!-- <LinearLayout

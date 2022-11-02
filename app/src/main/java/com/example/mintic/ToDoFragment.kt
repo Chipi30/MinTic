@@ -1,5 +1,7 @@
 package com.example.mintic
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mintic.room_database.ToDoDaD
+import com.example.mintic.room_database.ToDoDataBase
+import kotlinx.coroutines.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ToDoFragment : Fragment(){
     private lateinit var listRecyclerView: RecyclerView
     private lateinit var myAdapter : RecyclerView.Adapter<MyTaskListAdapter.MyViewHolder>
-
+    var myTaskTitles : ArrayList<String> = ArrayList()
+    var myTaskTime : ArrayList<String> = ArrayList()
+    var myTaskPlace : ArrayList<String> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
     }
@@ -25,6 +34,7 @@ class ToDoFragment : Fragment(){
         val fragmento: View = inflater.inflate(R.layout.fragment_to_do,container,false)
 
         return fragmento
+
         /*val detail1 : Button = fragmento.findViewById(R.id.btn_detail_1)
         val detail2 : Button = fragmento.findViewById(R.id.btn_detail_2)
         val detail3 : Button = fragmento.findViewById(R.id.btn_detail_3)
@@ -84,7 +94,8 @@ class ToDoFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var myTaskTitles : ArrayList<String> = ArrayList()
+
+       /* var myTaskTitles : ArrayList<String> = ArrayList()
         var myTaskTime : ArrayList<String> = ArrayList()
         var myTaskPlace : ArrayList<String> = ArrayList()
 
@@ -105,6 +116,42 @@ class ToDoFragment : Fragment(){
         myAdapter = MyTaskListAdapter(activity as AppCompatActivity,info)
         listRecyclerView.setHasFixedSize(true)
         listRecyclerView.adapter = myAdapter
-        listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+        listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))*/
+        val fab : View = requireActivity().findViewById((R.id.fabToDo))
+        fab.setOnClickListener { view->
+            val intent =Intent(activity,NewTaskActivity::class.java)
+            var recursiveScope = 0
+            startActivityForResult(intent,recursiveScope)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode==0){
+            if(resultCode==Activity.RESULT_OK){
+                updateList()
+            }
+
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+    fun updateList(){
+        val db= ToDoDataBase.getDatabase(requireActivity())
+        val toDoDAD = db.todoDao()
+        runBlocking{
+            launch{
+                var result = ToDoDaD.getAllTask()
+                var i=0
+                myTaskTitles.clear()
+                myTaskTime.clear()
+                myTaskPlace.clear()
+                while (i< result.size){
+                    myTaskTitles.add(result[i].title.toString())
+                    myTaskTime.add(result[i].time.toString())
+                    myTaskPlace.add(result[i].place.toString())
+                    i++
+                }
+                myAdapter.notifyDataSetChanged()
+            }
+        }
     }
 }

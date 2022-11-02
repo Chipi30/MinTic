@@ -36,4 +36,8 @@
     <string name="registerfacebook">Iniciar con Facebook</string>
     <string name="olvidoContraseña">¿Olvido su contraseña?</string>
     <string name="ya_tienes_cuenta">¿Ya tienes cuenta? Accede</string>
+    <string name="Save">Guardar</string>
+    <string name="Task">Tarea</string>
+    <string name="Time">Hora</string>
+    <string name="Place">Lugar</string>
 </resources>

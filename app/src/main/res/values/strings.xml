@@ -36,4 +36,8 @@
     <string name="registerfacebook">Register Facebook</string>
     <string name="olvidoContraseña">Forgot my password?</string>
     <string name="ya_tienes_cuenta">Already have an account? Access</string>
+    <string name="Save">Save</string>
+    <string name="Task">Task</string>
+    <string name="Time">Time</string>
+    <string name="Place">Place</string>
 </resources>
