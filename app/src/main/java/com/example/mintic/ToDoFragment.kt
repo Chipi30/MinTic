@@ -123,23 +123,24 @@ class ToDoFragment : Fragment(){
             var recursiveScope = 0
             startActivityForResult(intent,recursiveScope)
         }
+        var info : Bundle =Bundle()
+        info.putStringArrayList("titles",myTaskTitles)
+        info.putStringArrayList("times",myTaskTime)
+        info.putStringArrayList("places",myTaskPlace)
+        listRecyclerView =requireView().findViewById(R.id.recycleToDoList)
+        myAdapter = MyTaskListAdapter(activity as AppCompatActivity,info)
+        listRecyclerView.setHasFixedSize(true)
+        listRecyclerView.adapter = myAdapter
+        listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+        updateList()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode==0){
-            if(resultCode==Activity.RESULT_OK){
-                updateList()
-            }
-
-        }
-        super.onActivityResult(requestCode, resultCode, data)
-    }
     fun updateList(){
         val db= ToDoDataBase.getDatabase(requireActivity())
-        val toDoDAD = db.todoDao()
+        val toDoDAD= db.todoDao()
         runBlocking{
             launch{
-                var result = ToDoDaD.getAllTask()
+                var result = ToDoDaD.getAllTasks()
                 var i=0
                 myTaskTitles.clear()
                 myTaskTime.clear()
@@ -153,5 +154,15 @@ class ToDoFragment : Fragment(){
                 myAdapter.notifyDataSetChanged()
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode==0){
+            if(resultCode==Activity.RESULT_OK){
+                updateList()
+            }
+
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }

@@ -6,12 +6,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import java.util.List
 
 
 @Dao
 interface ToDoDaD {
-    @Query("SELECT * FROM ToDo")
-    suspend fun getAllTask():   List<ToDo>
+    @Query("SELECT * fROM ToDo")
+    suspend fun getAllTasks(): List<ToDo>
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTask(task : ToDo): Long
     @Update
